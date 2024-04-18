@@ -5,26 +5,26 @@ jobs:
     runs-on: macos-latest-large
     steps:
       - uses: actions/checkout@v4
-      - run: ./build-macos-x86_64.sh
+      - run: build-macos-x86_64.sh
       - uses: actions/upload-artifact@v4
         with:
           name: snap7-macos-x86_64
-          path: ./snap7-full-1.4.2/build/bin/x86_64-osx/
+          path: snap7-full-1.4.2/build/bin/x86_64-osx/
   build-linux-x86_64:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: ./build-linux-x86_64.sh
+      - run: build-linux-x86_64.sh
       - uses: actions/upload-artifact@v4
         with:
           name: snap7-linux-x86_64
-          path: ./snap7-full-1.4.2/build/bin/x86_64-linux/
+          path: snap7-full-1.4.2/build/bin/x86_64-linux/
   build-windows-x86_64:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
-      - run: .\build-windows-x86_64.ps1
+      - run: build-windows-x86_64.ps1
       - uses: actions/upload-artifact@v4
         with:
           name: snap7-windows-x86_64
-          path: .\snap7-full-1.4.2\build\bin\win64\
+          path: snap7-full-1.4.2\build\bin\win64\
