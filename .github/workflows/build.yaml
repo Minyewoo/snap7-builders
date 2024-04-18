@@ -1,15 +1,15 @@
 name: build
 on: [workflow_dispatch]
 jobs:
-  build-macos-aarch64:
+  build-macos-universal:
     runs-on: [self-hosted, macOS, ARM64]
     steps:
       - uses: actions/checkout@v4
-      - run: ./build-macos-aarch64.sh
+      - run: ./build-macos-universal.sh
       - uses: actions/upload-artifact@v4
         with:
-          name: libsnap7-macos-aarch64
-          path: ./snap7-full-1.4.2/build/bin/aarch64-osx/
+          name: libsnap7-1.4.2-macos-universal
+          path: ./snap7-full-1.4.2/build/bin/universal-osx/
   build-linux-x86_64:
     runs-on: ubuntu-latest
     steps:
@@ -17,7 +17,7 @@ jobs:
       - run: ./build-linux-x86_64.sh
       - uses: actions/upload-artifact@v4
         with:
-          name: libsnap7-linux-x86_64
+          name: libsnap7-1.4.2-linux-x86_64
           path: ./snap7-full-1.4.2/build/bin/x86_64-linux/
   build-windows-x86_64:
     runs-on: [self-hosted, Windows, X64]
@@ -26,5 +26,5 @@ jobs:
       - run: .\build-windows-x86_64.ps1
       - uses: actions/upload-artifact@v4
         with:
-          name: libsnap7-windows-x86_64
+          name: libsnap7-1.4.2-windows-x86_64
           path: .\snap7-full-1.4.2\build\bin\win64\
