@@ -1,11 +1,19 @@
 name: build
 on: [workflow_dispatch]
 jobs:
-  build-macos-universal:
+  build-macos-x86_64-aarch64-universal:
     runs-on: [self-hosted, macOS, ARM64]
     steps:
       - uses: actions/checkout@v4
       - run: ./build-macos-universal.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: libsnap7-1.4.2-macos-aarch64
+          path: ./snap7-full-1.4.2/build/bin/aarch64-osx/
+      - uses: actions/upload-artifact@v4
+        with:
+          name: libsnap7-1.4.2-macos-x86_64
+          path: ./snap7-full-1.4.2/build/bin/x86_64-osx/
       - uses: actions/upload-artifact@v4
         with:
           name: libsnap7-1.4.2-macos-universal
