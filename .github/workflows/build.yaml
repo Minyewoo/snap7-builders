@@ -20,7 +20,7 @@ jobs:
           name: snap7-linux-x86_64
           path: ./snap7-full-1.4.2/build/bin/x86_64-linux/
   build-windows-x86_64:
-    runs-on: dockerNode-f04d9
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
       - run: ./build-windows-x86_64.sh
