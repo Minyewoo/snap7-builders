@@ -1,0 +1,14 @@
+name: Release
+on: [workflow_call]
+jobs:
+  build:
+    uses: ./.github/workflows/build.yaml
+  publish:
+    needs: [build]
+    runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - uses: ncipollo/release-action@v1
+          with:
+            artifacts: "libsnap7*"
+

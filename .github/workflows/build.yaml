@@ -1,5 +1,5 @@
 name: build
-on: [workflow_dispatch]
+on: [workflow_call]
 jobs:
   build-macos-x86_64-aarch64-universal:
     runs-on: [self-hosted, macOS, ARM64]
