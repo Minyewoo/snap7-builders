@@ -17,9 +17,12 @@ jobs:
         with:
           path: libsnap7
       - name: Compression
-          - run: cd libsnap7
-          - run: for i in */; do zip -r "${i%/}.zip" "$i"; done
-          - run: cd ..
+          run: | 
+            cd libsnap7
+            for i in */; do 
+              zip -r "${i%/}.zip" "$i"
+            done
+            cd ..
       - name: Publish release
         uses: ncipollo/release-action@v1
         with:
