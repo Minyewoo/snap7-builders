@@ -2,7 +2,7 @@ name: build
 on: [workflow_dispatch]
 jobs:
   build-macos-aarch64:
-    runs-on: macos-latest-large
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v4
       - run: ./build-macos-aarch64.sh
