@@ -15,7 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: ./build-linux-x86_64.sh
+      - run: pwd
       - uses: actions/upload-artifact@v4
         with:
           name: snap7-linux-x86_64
-          path: ~/snap7-full-1.4.2/build/bin/x86_64-linux/
+          path: ./snap7-full-1.4.2/build/bin/x86_64-linux/
