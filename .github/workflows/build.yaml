@@ -1,4 +1,4 @@
-name: build
+name: Build
 on: [workflow_call]
 jobs:
   build-macos-x86_64-aarch64-universal:
