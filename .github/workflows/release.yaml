@@ -16,8 +16,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           path: libsnap7
-          pattern: libsnap7-*
-          merge-multiple: true
       - name: Publish release
         uses: ncipollo/release-action@v1
         with:
