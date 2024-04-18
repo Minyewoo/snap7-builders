@@ -2,7 +2,7 @@ name: build
 on: [workflow_dispatch]
 jobs:
   build-macos-aarch64:
-    runs-on: self-hosted
+    runs-on: [self-hosted, macOS, ARM64]
     steps:
       - uses: actions/checkout@v4
       - run: ./build-macos-aarch64.sh
@@ -20,7 +20,7 @@ jobs:
           name: libsnap7-linux-x86_64
           path: ./snap7-full-1.4.2/build/bin/x86_64-linux/
   build-windows-x86_64:
-    runs-on: self-hosted
+    runs-on: [self-hosted, Windows, X64]
     steps:
       - uses: actions/checkout@v4
       - run: .\build-windows-x86_64.ps1
